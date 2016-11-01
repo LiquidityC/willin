@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 #include <flat/flat.h>
 #include "Box.h"
 
@@ -16,6 +17,15 @@ void Box::init(const flat2d::GameData *gameData)
 	flat2d::Texture *texture = new flat2d::Texture();
 	texture->loadFromFile("resources/box.png", gameData->getRenderData()->getRenderer());
 	setTexture(texture);
+
+	std::vector<SDL_Rect> frames = {
+		{ 0,	0,	20,	20 },
+		{ 20,	0,	20,	20 },
+		{ 40,	0,	20,	20 },
+		{ 60,	0,	20,	20 }
+	};
+	addAnimation("rotate", new flat2d::Animation(frames, 200));
+	startAnimation("rotate");
 }
 
 void Box::handle(const SDL_Event& e)
