@@ -15,9 +15,9 @@ class Box : public flat2d::Entity
 			setInputHandler(true);
 		}
 
-		void init(const flat2d::GameData *gameData);
-		void handle(const SDL_Event& event);
-		void preMove(const flat2d::GameData *gameData);
+		void init(const flat2d::GameData *gameData) override;
+		void handle(const SDL_Event& event) override;
+		void preMove(const flat2d::GameData *gameData) override;
 };
 
 #endif // BOX_H_

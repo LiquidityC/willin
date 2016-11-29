@@ -11,7 +11,7 @@ class BigBox : public flat2d::Entity
 			setInputHandler(false);
 		}
 
-		void init(const flat2d::GameData *gameData);
+		void init(const flat2d::GameData *gameData) override;
 };
 
 #endif // BIGBOX_H_
